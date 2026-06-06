@@ -7,10 +7,10 @@ from langchain_community.tools.tavily_search import TavilyAnswer
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
 
-# 🔑 API 키 설정
-GROQ_API_KEY = "GROQ_API_KEY"
-TAVILY_API_KEY = "TAVILY_API_KEY"  # 👈 본인의 테빌리 키를 꼭 넣어주세요!
 
+# 🔑 API 키 설정 (스트림릿 비밀 주머니와 완벽 연동!)
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
 os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
 
 # 1. LLM 및 검색 도구 선언
